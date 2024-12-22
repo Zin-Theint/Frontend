@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  react-frontend:
+    build: .
+    container_name: react-docker-assignment-container
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+
+    # Remove volume to avoid overwriting container's node_modules
+    # volumes:
+    #   - .:/app
+
+    stdin_open: true
+    tty: true
